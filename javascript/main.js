@@ -4,9 +4,10 @@ function draw() {
   ctx.fillStyle = "#70c5ce";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   gameAssets.drawBackground();
-  ground.init();
   gameAssets.drawReadyMsg();
   bird.init(frame);
+  pipe.init();
+  ground.init();
   gameAssets.drawEndMsg();
 }
 
