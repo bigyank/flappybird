@@ -4,6 +4,7 @@ class Bird {
     this.canvasY = 150;
     this.width = 34;
     this.height = 26;
+    this.radious = 12;
 
     this.wingSpeed = 0;
     this.state = 0;

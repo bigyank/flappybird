@@ -50,6 +50,7 @@ class Pipe {
     });
 
     this.update();
+    this.detectCollision();
   }
 
   update() {
@@ -67,6 +68,35 @@ class Pipe {
       // remove pipes when they go outside screen
       if (pipe.x + this.width <= 0) {
         this.position.shift();
+        game.score++;
+        game.bestscore = Math.max(game.score, game.bestscore);
+        localStorage.setItem("bestscore", game.bestscore);
+      }
+    });
+  }
+
+  detectCollision() {
+    this.position.map((pipe) => {
+      let bottomYpos = pipe.y + this.height + this.gap;
+
+      // TOP Pipe
+      if (
+        bird.canvasX + bird.radious > pipe.x &&
+        bird.canvasX - bird.radious < pipe.x + this.width &&
+        bird.canvasY + bird.radious > pipe.y &&
+        bird.canvasY - bird.radious < pipe.y + this.height
+      ) {
+        game.gameState = "end";
+      }
+
+      // Bottom Pipe
+      if (
+        bird.canvasX + bird.radious > pipe.x &&
+        bird.canvasX - bird.radious < pipe.x + this.width &&
+        bird.canvasY + bird.radious > bottomYpos &&
+        bird.canvasY - bird.radious < bottomYpos + this.height
+      ) {
+        game.gameState = "end";
       }
     });
   }

@@ -2,4 +2,5 @@ canvas {
   display: block;
   margin: 0 auto;
   border: 1px solid #aaa;
+  font-family: "Teko", "Courier New", Courier, monospace;
 }

@@ -8,6 +8,7 @@ function draw() {
   bird.init(frame);
   pipe.init();
   ground.init();
+  game.drawScore();
   gameAssets.drawEndMsg();
 }
 
