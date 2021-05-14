@@ -100,6 +100,10 @@ class Pipe {
       }
     });
   }
+
+  reset() {
+    this.position = [];
+  }
 }
 
 const pipe = new Pipe();

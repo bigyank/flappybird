@@ -20,7 +20,7 @@ function loop() {
 
 loop();
 
-canvas.addEventListener("click", () => {
+canvas.addEventListener("click", (event) => {
   if (game.current === game.start) {
     game.gameState = "game";
   }
@@ -28,6 +28,21 @@ canvas.addEventListener("click", () => {
     bird.flap();
   }
   if (game.current === game.end) {
-    game.gameState = "start";
+    let rec = canvas.getBoundingClientRect();
+    let clickX = event.clientX - rec.left;
+    let clickY = event.clientY - rec.top;
+
+    // CHECK IF WE CLICK ON THE START BUTTON
+    if (
+      clickX >= game.startBtn.x &&
+      clickX <= game.startBtn.x + game.startBtn.w &&
+      clickY >= game.startBtn.y &&
+      clickY <= game.startBtn.y + game.startBtn.h
+    ) {
+      pipe.reset();
+      bird.speedReset();
+      game.resetScore();
+      game.gameState = "start";
+    }
   }
 });

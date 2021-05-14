@@ -6,6 +6,13 @@ class Game {
     this.end = 2;
     this.bestscore = parseInt(localStorage.getItem("bestscore")) || 0;
     this.score = 0;
+
+    this.startBtn = {
+      x: 120,
+      y: 263,
+      w: 83,
+      h: 29,
+    };
   }
 
   set gameState(state) {
@@ -41,6 +48,10 @@ class Game {
       ctx.fillText(this.bestscore, 225, 228);
       ctx.strokeText(this.bestscore, 225, 228);
     }
+  }
+
+  resetScore() {
+    this.score = 0;
   }
 }
 

@@ -75,6 +75,9 @@ class Bird {
       height: this.height,
     };
   }
+  speedReset() {
+    this.speed = 0;
+  }
 }
 
 const bird = new Bird();
