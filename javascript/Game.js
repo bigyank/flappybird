@@ -41,10 +41,11 @@ class Game {
       ctx.strokeText(this.score, canvas.width / 2, 50);
       // end screen
     } else if (this.current === this.end) {
-      ctx.font = "40px Teko";
+      // score on end screen
+      ctx.font = "30px Teko";
       ctx.fillText(this.score, 225, 186);
       ctx.strokeText(this.score, 225, 186);
-
+      // best score on end screen
       ctx.fillText(this.bestscore, 225, 228);
       ctx.strokeText(this.bestscore, 225, 228);
     }
