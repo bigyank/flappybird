@@ -1,7 +1,7 @@
 class Assets {
   constructor() {
     this.sprite = new Image();
-    this.sprite.src = "../assets/sprite.png";
+    this.sprite.src = "/assets/sprite.png";
   }
 
   getBackground() {
