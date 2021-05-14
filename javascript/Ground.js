@@ -12,7 +12,7 @@ class Ground {
   init() {
     gameAssets.drawLowerground(this.compileGround());
     if (game.current === game.game) {
-      this.canvasX = (this.canvasX - this.dx) % (canvas.width / 10);
+      this.canvasX = (this.canvasX - this.dx) % (canvas.width / 4);
     }
   }
 
